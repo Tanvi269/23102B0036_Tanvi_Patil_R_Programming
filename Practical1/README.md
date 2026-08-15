@@ -39,8 +39,6 @@ Practical01/
 ├── cleaned_air_quality_data.csv
 ├── PRSA_Data_Aotizhongxin_20130301-20170228.csv
 └── README.md
-Output Visualization
-Missing Values Graph
 
 Output
 Cleaned Air Quality Dataset
@@ -50,3 +48,6 @@ Exported CSV File
 Technologies Used
 R
 RStudio
+
+Author
+Tanvi patil
