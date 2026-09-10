@@ -38,7 +38,7 @@ R-Programming-Practicals/
 | Practical 3  | Coming Soon                       | ✅ Completed            |
 | Practical 4  | Coming Soon                       | ✅ Completed           |
 | Practical 5  | Coming Soon                       |  ✅ Completed       |
-| Practical 6  | Coming Soon                         ✅ Completed
+| Practical 6  | Coming Soon                          ✅ Completed
 | Practical 7  | Coming Soon                       | ⏳           |
 | Practical 8  | Coming Soon                       | ⏳           |
 | Practical 9  | Coming Soon                       | ⏳           |
