@@ -1,0 +1,105 @@
+# ==========================================
+# WEEK 2: FOUNDATIONS OF R SOFTWARE (NPTEL)
+# ==========================================
+
+# 1. R as a Calculator & BODMAS Rules
+2 + 3[cite: 34]
+2 * 3[cite: 34]
+2 - 3[cite: 35]
+3 / 2[cite: 35]
+2 * 3 - 4 + 5 / 6[cite: 35]
+(2 + 3) * 5 + 5 - 10[cite: 37]
+(((2 + 3) * 5 + 5) - 10) / 2[cite: 37]
+
+# Blank spaces have no role in calculations
+2+5[cite: 38]
+2 + 5[cite: 38]
+
+# 2. Assignment Operators & Variables
+x <- 20[cite: 17]
+x[cite: 17]
+x = 20[cite: 17]
+y = x * 2[cite: 17]
+z = x + y[cite: 17]
+z[cite: 17]
+
+# Assigning numbers and characters
+x = "apple"[cite: 18]
+x <- "apple1"[cite: 18]
+x = 'apple'[cite: 18]
+x <- 'apple'[cite: 18]
+
+# Checking data types
+x = 20[cite: 20]
+is.numeric(x)[cite: 20]
+is.character(x)[cite: 20]
+y = "apple"[cite: 20]
+is.character(y)[cite: 20]
+is.numeric(y)[cite: 20]
+
+# Converting numbers and characters
+x = 20[cite: 21]
+y = as.character(x)[cite: 21]
+is.numeric(y)[cite: 21]
+is.character(y)[cite: 21]
+y[cite: 21]
+
+y = "apple"[cite: 22]
+z = as.numeric(y)[cite: 22] # Introduces NAs by coercion
+is.numeric(z)[cite: 22]
+is.character(z)[cite: 22]
+z[cite: 22]
+
+# Comments and Case Sensitivity
+# mu is the mean (comment line)[cite: 23]
+x <- 20[cite: 24]
+# Note: R is case-sensitive. 'X' and 'x' are treated differently[cite: 24]
+x <- 30[cite: 24]
+
+# 3. Combining Values, Mode, and Infinity
+y = c(1, 2, 3, 4, 5)[cite: 25]
+y[cite: 25]
+
+x = 6[cite: 26]
+mode(x)[cite: 26]
+y = "apple"[cite: 26]
+mode(y)[cite: 26]
+
+storage.mode(x)[cite: 30]
+x = TRUE[cite: 30]
+storage.mode(x)[cite: 30]
+x = "apple"[cite: 30]
+storage.mode(x)[cite: 30]
+
+3 / 0[cite: 31]
+5 + Inf[cite: 31]
+x = 5 + Inf[cite: 31]
+is.finite(x)[cite: 31]
+is.infinite(x)[cite: 31]
+
+# 4. Calculations with Scalars and Data Vectors
+# Operations with Scalars
+c(2, 3, 5, 7) + 10[cite: 39]
+c(12, 13, 15, 17) - 10[cite: 40]
+c(2, 3, 5, 7) * 10[cite: 41]
+c(12, 13, 15, 17) / 10[cite: 42]
+
+# Addition with Data Vectors
+c(2, 3, 5, 7) + c(-2, -3, -5, 8)[cite: 4]
+c(2, 3, 5, 7) + c(8, 9)[cite: 5]
+c(2, 3, 5, 7) + c(8, 9, 10)[cite: 6] # Triggers warning message (recycling rule)
+
+# Subtraction with Data Vectors
+c(2, 3, 5, 7) - c(-2, -3, -5, 8)[cite: 7]
+c(12, 13, 15, 17) - c(8, 9)[cite: 8]
+c(12, 13, 15, 17) - c(8, 9, 10)[cite: 9] # Triggers warning message
+
+# Multiplication with Data Vectors
+c(2, 3, 5, 7) * c(-2, -3, -5, 8)[cite: 10]
+c(2, 3, 5, 7) * c(8, 9)[cite: 11]
+c(2, 3, 5, 7) * c(8, 9, 10)[cite: 12] # Triggers warning message
+
+# Division with Data Vectors
+c(24, 20, 8, 16) / c(3, 4, 2, 8)[cite: 13]
+c(24, 20, 8, 16) / c(4, 2)[cite: 14]
+c(24, 20, 8, 16) / c(4, 2, 8)[cite: 15] # Triggers warning message
