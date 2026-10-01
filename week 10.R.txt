@@ -1,0 +1,100 @@
+# =====================================================================
+# Week 10: Comprehensive R Code Script
+# Topics: String Operations, Data Frames Inspection, Subsetting, & Merging
+# =====================================================================
+
+# ---------------------------------------------------------------------
+# 1. String Substitution and Replacement (sub and gsub)
+# ---------------------------------------------------------------------
+
+# Replace the first instance of a substring
+y_sub <- "Number of participants: 25"
+sub("25", "30", y_sub)
+
+# Replace substrings (sub replaces first instance, gsub replaces all)
+y_rep <- "Mr. Singh is the smart one. Mr. Singh is funny, too."
+sub("Mr. Singh", "Professor Jha", y_rep)   # First occurrence only
+gsub("Mr. Singh", "Professor Jha", y_rep)  # All occurrences
+
+
+# ---------------------------------------------------------------------
+# 2. String Searching (grep and grepl)
+# ---------------------------------------------------------------------
+
+str_vec <- c("R Course", "exercises", "include examples of R language")
+
+# Return matching values or indices
+grep("ex", str_vec, value = TRUE)
+grep("ex", str_vec, value = FALSE)
+
+# Case-sensitive and case-insensitive matching
+str_case <- c("R Course", "exercises", "include examples of r language", "in R software.")
+grep("R", str_case, ignore.case = TRUE, value = TRUE)
+grep("R", str_case, ignore.case = FALSE, value = FALSE)
+
+# Searching across combined vector elements
+x_date <- "R course 24.07.2021"
+y_part <- "Number of participants: 25"
+grep("our", c(x_date, y_part))
+
+# Returning logical vectors using grepl
+grepl("R", str_vec)
+grepl("ex", str_vec)
+
+
+# ---------------------------------------------------------------------
+# 3. Data Frames Overview and Inspection
+# ---------------------------------------------------------------------
+
+library(MASS)
+
+# Inspect dataset attributes
+painters
+rownames(painters)
+colnames(painters)
+summary(painters)
+
+# Check data types of columns
+is.numeric(painters$School)
+is.numeric(painters$Drawing)
+is.factor(painters$School)
+is.factor(painters$Drawing)
+
+
+# ---------------------------------------------------------------------
+# 4. Attaching, Detaching, and Subsetting Data Frames
+# ---------------------------------------------------------------------
+
+# Managing environment paths
+attach(painters)
+summary(School)
+summary(Composition)
+detach(painters)
+
+# Filtering and subsetting
+subset(painters, School == 'F')
+painters[painters[["School"]] == "F", ]
+subset(painters, Composition <= 6)
+subset(painters, School == "F", select = c(-3, -5))
+
+# Splitting data frames by factor
+splitted <- split(painters, painters$School)
+is.data.frame(splitted$A)
+
+
+# ---------------------------------------------------------------------
+# 5. Combining and Merging Data Frames
+# ---------------------------------------------------------------------
+
+# Sample data frames for joining
+df1 <- data.frame(state = c("UP", "MP", "AP", "JK"), popnsize = c(1000, 2000, 3000, 4000))
+df2 <- data.frame(state = c("UP", "MP", "AP", "JK"), samplesize = c(100, 200, 300, 400), surveycompleted = c("Yes", "No", "Yes", "No"))
+
+# Horizontal combinations
+cbind(df1, df2)
+merge(df1, df2, by = "state")
+
+# Vertical stacking
+df11 <- data.frame(state = c("UP", "MP", "AP", "JK"), popnsize = c(1000, 2000, 3000, 4000))
+df22 <- data.frame(state = c("Bihar", "Delhi", "Punjab"), popnsize = c(100, 200, 300))
+rbind(df11, df22)
